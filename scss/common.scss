@@ -1,0 +1,354 @@
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  @include prefixed(user-select, none); 
+}
+
+html, body, div[ui-view]{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	overflow: hidden;
+  @include media("<=smd") {
+    overflow: auto;
+  }
+}
+
+.desktop-only{
+  @include media("<=smd") {
+    display: none !important;
+  }
+}
+
+.tab-only{
+  display: none !important;
+  @include media("<=smd") {
+    display: block !important;
+  }
+}
+
+// Top Menu
+.menu{
+  @include media("<=smd") {
+    position: relative;
+    @include prefixed(zoom, .7);
+    -moz-transform:  scale(.7,.7);
+    -moz-transform-origin: left center;
+  }
+	position:fixed;
+	z-index:1;
+	top:0;
+	margin: 0;
+	padding: 0;
+	width: 100%;  
+  .header {
+    .nav-link{
+      color: $b;
+      &:hover{
+        color: $link;
+      }
+    }
+  }
+  .loc-ctn {
+    @include media("<=ph"){
+      font-size: 1.75rem;
+      width: 70%;
+    }
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+    span{
+      display: inline-block;
+    }
+    .nav-link{
+      color: $b;
+      &:hover{
+        color: $link;
+      }
+    }
+  }
+  .right-icons{
+    font-size: 2.5rem;
+    span{
+      cursor: pointer;
+    }
+  }
+}
+.br-item{
+  display: inline-block;
+  vertical-align: top;
+}
+
+// First section left
+.info-ctn{
+	position: relative;
+}
+.info-ctn-inner{
+  @include pa(0, 0);
+  @include media("<=ph") {
+    // transform: scale(.7);
+  }  
+	overflow-y: scroll;
+  height: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  i {
+    font-size: 1.5rem;
+    color: rgba(127, 127, 127, .7);
+  }
+}
+.nano{
+  -ms-overflow-style: none;
+  .nano-content { padding-top: 10px; }
+  .nano-pane    { background: #888; }
+  .nano-slider  { background: #111; }
+} 
+
+// BS Carousel
+.carousel-inner{
+  z-index: 0;
+}  
+.carousel-item{
+  div{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+.carousel-control-next,
+.carousel-control-prev{
+  z-index: 1;
+  width: 10%;
+  transition: all .3s;	
+}
+.carousel-control-prev{
+  @include media("<=ph") {
+    left: 0;
+  }
+}
+.carousel-control-next{
+  @include media("<=ph") {
+    right: 0;
+  }
+}
+#car-full{
+  .carousel-item{
+    div{
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .carousel-control-next,
+  .carousel-control-prev{
+    width: 7%;
+  }
+  .carousel-control-prev{
+    @include media("<=ph") {
+      left: 20px;
+    }
+  }
+  .carousel-control-next{
+    @include media("<=ph") {
+      right: 20px;
+    }
+  }
+}
+.btn-exp {
+  @include pa(-50, "", "", 0);
+  @include media("<=lp") {
+		top: -50px;    
+  }
+  z-index: 3;
+  transition: all .3s;
+  opacity: .7;
+  i{
+    @include media("<=lp") {
+		  font-size: 1.5rem;
+    }
+    font-size: 2.5rem;
+    color: $w;
+  }
+  &:hover{
+    opacity: 1;	
+  }
+}
+
+// Full screen container
+.img-overlay-ctn{
+  @include pf(0, 0);
+  z-index: 3;
+  opacity: 1;
+  background: rgba($b, .7);
+  overflow: hidden;
+  text-align: center;
+  .loc-info{
+    @include pa(0, 0);
+    @include media("<=ph") {
+      width: 80%;
+      text-align: left;
+      z-index: 1;
+    }
+    z-index: 4;
+    background: rgba($w, .7);
+    padding: 5px;
+    border-bottom-right-radius: 10px;
+  }
+  img{
+    width: 38px;
+    height: 38px;
+    animation-name: spinning;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    &.spinner-img{
+      margin-top:-50px;
+      margin-left:-50px;
+      position:absolute;
+      top: 50%;
+      width:100px;
+      height:100px;
+      animation-duration: 3s;
+    }
+  }
+}
+
+// Full screen buttons
+.badge-ctn{
+  @include pa(0, "", "", 0);
+  @include media("<=ph") {
+    margin-right: 1rem;
+    margin-top: 1rem;
+  }  
+  z-index: 2;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  .badge-pill{
+    @include prefixed(transition,  box-shadow .2s);
+    @include media("<=smd") {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @include media("<=ph") {
+      font-size: 6vw;
+      height: 10vw;
+      width: 10vw;
+    } 
+    cursor: pointer;
+    font-size: 2vw;
+    height: 5vw;
+    width: 5vw;
+    border: 2px solid rgba($b, .47);
+    box-shadow: 0px 0px 10px 5px rgba($b, .47);
+    margin-bottom: 1vw;
+    &:hover{
+      box-shadow: 0px 0px 20px 5px rgba($b, .8);
+    }
+    .pill-text{
+      @include media("<=smd") {
+        display: none;        
+      }
+      position: relative;
+      font-size: 1.25vw;
+      top: -.5vw;
+    }
+  }
+  .badge-thumb, .badge-filter{
+    @extend %j-c;    
+  }
+  .badge-thumb{
+    img{
+      height: 2.75vw;
+    }
+  }
+  .badge-filter{
+    i{
+      @include media("<=ph") {
+        font-size: 5vw;
+      }
+      font-size: 2.75vw;
+    }
+  }
+  .filter-outer{
+    position: relative;
+    .filter-close{
+      @include pa(-5, "", "", -8);
+      @include media("<=smd") {
+        height: 20px;
+        width: 20px;
+        font-size: .75rem;
+      }      
+      height: 30px;
+      width: 30px;
+      background: rgba(255, 0, 0, 1);
+      border-radius: 30px;
+      font-size: 1.35rem;
+      padding-top: 2px;
+      i{
+        @include media("<=smd") {
+          font-size: 1.75vw;      
+        }
+        @include media("<=ph") {
+          font-size: 3.25vw;
+        }
+        font-size: 1.15vw;
+      }
+    }
+    .filter-ctn{
+      @include pa(0, -240);
+	    border-radius: .5rem;
+      background: $w;
+      width: auto;
+      border: 2px solid $sk-bl-dark;
+      text-align: left;
+      .btn{
+        margin: 5px;
+      }
+    }
+  }
+}
+
+// Loader
+.spinner{
+  @extend %j-c;
+  @include pf(0, 0);  
+  z-index: 2;
+  background-color: rgba($b, .7);
+  &.sp-sec{
+    @include media("<=ph") {
+      top: 8rem;
+      height: calc(100% - 8rem);
+    }
+    opacity: 1;
+    top: 12rem;
+    height: calc(100% - 12rem);
+  }
+  img{
+    width: 38px;
+    height: 38px;
+    animation-name: spinning;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    &.spinner-img{
+      margin-top:-50px;
+      margin-left:-50px;
+      position:absolute;
+      top: 50%;
+      width:100px;
+      height:100px;
+      animation-duration: 3s;
+    }
+  }
+}
+
+@include keyframes(spinning) {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.carousel-inner .carousel-item {
+  @include prefixed(transition, transform .5s ease);  
+}

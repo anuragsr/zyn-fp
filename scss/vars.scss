@@ -1,0 +1,113 @@
+$w: #fff;
+$b: #000;
+$g: grey;
+$y: yellow;
+$outline: #2876f7;
+$link: #007bff;
+$dd-bg: #3297FD;
+$sk-bl: #91e0f2;
+$sk-bl-dark: #5398a8;
+$high-text-cl: #706565;
+$high-text-bg: rgba(128, 128, 128, 0.08);
+$ins-title: #2db4d2;
+$book-now-bg: #94c887;
+$book-now-bdr: #28a745;
+
+// Media breakpoints
+$breakpoints: (
+  'ph': 500px,
+  'ph-ls': 700px,
+  'tab': 768px,
+  'smd': 1024px,
+  'md': 1280px,
+  'lp': 1368px,
+  'sld': 1500px,
+  'ld': 1600px
+) !default;
+
+// Usage:
+// @include media("<=lp") {
+//   padding: 20px 10px;      
+// }
+
+// Justify content: space between
+%j-s-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Justify content: center
+%j-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Justify content: flex-end
+%j-f-e {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// Position absolute mixin
+@mixin pa($top:"", $left:"", $bottom:"", $right:"", $unit: "px") {
+  position: absolute;
+  @if $top != ""{
+    top: #{$top}#{$unit};
+  }
+  @if $left != ""{
+    left: #{$left}#{$unit};
+  }
+  @if $bottom != ""{
+    bottom: #{$bottom}#{$unit};
+  }
+  @if $right != ""{
+    right: #{$right}#{$unit};
+  }
+}
+
+@mixin pf($top:"", $left:"", $bottom:"", $right:"", $unit: "px") {
+  position: fixed;
+  @if $top != ""{
+    top: #{$top}#{$unit};
+  }
+  @if $left != ""{
+    left: #{$left}#{$unit};
+  }
+  @if $bottom != ""{
+    bottom: #{$bottom}#{$unit};
+  }
+  @if $right != ""{
+    right: #{$right}#{$unit};
+  }
+}
+
+// Prefix & Keyframes mixins
+@mixin prefixed($property, $value) {
+  -webkit-#{$property}: #{$value}; /* Safari, Chrome */
+  -khtml-#{$property}: #{$value}; /* Konqueror HTML */  
+  -moz-#{$property}: #{$value};  /* Firefox */
+  -ms-#{$property}: #{$value};  /* Internet Explorer/Edge */
+  -o-#{$property}: #{$value};  /* Opera */
+  #{$property}: #{$value};    /* Non-prefixed version */
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

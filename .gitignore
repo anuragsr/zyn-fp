@@ -4,5 +4,6 @@ specs
 /extra
 /resources
 specs
+dir.bat
+scss.bat
 serve.bat
-serve.sh

@@ -1,0 +1,207 @@
+.property{
+  #section0{
+    @include media("<=smd") {      
+      padding-top: 2rem;
+    }
+	  padding-top: 7rem;
+  }
+
+  .loc-box{
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    height: 20rem;
+    border: 1px solid rgba($b, .2);
+    @include media("<=lp", ">smd") {
+      height: 15rem;   
+    }
+    @include media("<=ph") {
+      height: 15rem;   
+    }
+    &.hovered, &.clicked{
+      outline: 5px solid $outline;
+    }
+    &.active{
+      .loc-opts{
+        bottom: 0;
+      }
+      .carousel-control-prev{
+        left: 0;
+      }
+      .carousel-control-next{
+        right: 0;
+      }
+      .btn-exp{
+        top: 0;
+      }
+    }
+    .loc-opts{
+      @include pa("", 0, -70, "");
+      @include media("<=lp", ">smd") {
+        bottom: -50px;   
+      }
+      @include media("<=ph") {
+        bottom: -50px;   
+      }
+      z-index: 2;
+      transition: bottom .3s;
+    }    
+    .loc-title{
+      @include media("<=lp", ">smd") {
+		    font-size: 24px;
+      }
+      @include media("<=ph") {
+        font-size: 24px;
+      }
+      color: $w;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px rgba($b, .7);
+    }    
+    .loc-btn{
+      @extend %j-c;
+      @include media("<=lp", ">smd") {
+		    height:50px;		    
+      }
+      @include media("<=ph") {
+        height: 50px;
+      }
+      padding-top: 5px;
+      height: 70px;
+      background: rgba(190, 190, 190, .9);
+    }    
+    .loc-btn-sng{
+      font-weight: bold;
+      margin: 0 1rem;
+      color: rgba($b, .4);	
+      transition: color .5s;
+      @include media("<=ld", ">smd") {
+        font-size: .75rem;
+		    margin: 0 .5rem;     
+      }
+      @include media("<=ph") {
+        font-size: .75rem;
+		    margin: 0 .35rem;
+      }
+      i{
+        @include media("<=lp", ">smd") {
+          font-size: .75rem;
+        }
+        @include media("<=ph") {
+          font-size: .75rem;         
+        }
+        transition: color .5s;
+        color: rgba($b, .4);
+      }
+      &:hover, &:hover i{
+        color: rgba($b, 1);
+      }
+    }
+  }
+      
+  .carousel-control-prev{
+    left: -50px;
+    @include media("<=smd") {      
+      left: -70px;
+    }
+  }  
+  .carousel-control-next{
+    right: -50px;
+    @include media("<=smd") {      
+      right: -70px;
+    }
+  }  
+  .carousel-control-next-icon, 
+  .carousel-control-prev-icon{
+    width: 40px;
+    height: 40px;
+  }
+  
+  #car-full {
+    .carousel-control-prev{ 
+      @include media("<=smd") {      
+        left: 20px;
+      }
+      left: 0;
+    }
+    .carousel-control-next{ 
+      @include media("<=smd") {      
+        right: 20px;
+      }
+      right: 0;
+    }
+
+    .carousel-control-prev-icon, 
+    .carousel-control-next-icon{
+      @include media("<=ph") {      
+        transform: scale(2);
+      }
+      height: 70px;
+      width: 70px;
+    }
+  }
+  
+  .pixi-ctn-outer{
+    @include media("<=smd") {
+      display: none;
+      // To test touch
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }    
+    .pixi-ctn{
+      @extend %j-c;
+      position: relative;
+      background: $g;
+      .badge-ctn{
+        @include media("<=smd") {
+          display: block;
+        }
+        display: none;
+        z-index: 1;
+      }
+      img.logo-img{
+        @include pa("", "", 25, 25);
+        @include media("<=smd") {
+          height: 70px;
+        }
+        display: block;
+        z-index: 1;
+        height: 100px;
+      }
+      .loader{        
+        border-radius: 50%;
+        color: $w;
+        font-size: 11px;
+        text-indent: -99999em;
+        margin: 55px auto;
+        position: relative;
+        width: 10em;
+        height: 10em;
+        box-shadow: inset 0 0 0 1em;
+        @include prefixed(transform, translateZ(0));
+        &:before, &:after{
+          border-radius: 50%;
+          content: '';
+          width: 5.2em;
+          height: 10.2em;
+          background: $g;
+        }
+        &:before{
+          border-radius: 10.2em 0 0 10.2em;
+          @include pa(-.1, -.1, "", "", "em");
+          @include prefixed(transform-origin, 5.2em 5.1em);
+          @include prefixed(animation, spinning 2s infinite ease 1.5s);
+        }
+        &:after{
+          border-radius: 0 10.2em 10.2em 0;
+          @include pa(-.1, 5.1, "", "", "em");
+          @include prefixed(transform-origin, 0px 5.1em);
+          @include prefixed(animation, spinning 2s infinite ease);
+        }
+      }
+    }
+  }
+}
