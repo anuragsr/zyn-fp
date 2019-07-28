@@ -31,9 +31,10 @@ var isIE = function(){ return /*@cc_on!@*/false || !!document.documentMode }
 var isEdge = function(){ return !isIE() && !!window.StyleMedia }
 var app = angular.module('fpApp', ['ui.router', 'ui.router.title'])
 app
-.config(function($stateProvider, $urlRouterProvider) {  
-  $urlRouterProvider.otherwise("/property/the-banks/");
+.config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {  
+  $urlRouterProvider.otherwise("/property/the-banks");
   // $urlRouterProvider.otherwise("/home");
+  $urlMatcherFactoryProvider.strictMode(false);
   $stateProvider
   // .state('home', {
   //   url: "/home",
@@ -53,7 +54,7 @@ app
   //   }
   // })
   .state('property', {
-    url: "/property/:propertyName/",
+    url: "/property/:propertyName",
     templateUrl: "templates/home.html",
     controller: 'hmCtrl',
     resolve: {

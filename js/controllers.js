@@ -22,9 +22,9 @@ app
   , ctn = new PIXI.Container()
   , img = new Image()
   , lastCenter
-  , lastZoom = -.5
   , s = $scope
   , preloadArr = []
+  , lastZoom
   // , firstClick = true
   // , areaSelected = false
   ;
@@ -37,7 +37,7 @@ app
     showLoaderMain: true
   }
 
-  $(function () {     
+  $(function () {
     initCanvas() 
   })
 
@@ -89,12 +89,14 @@ app
 
   function drawCanvas(e){
     // l("Loaded image")
+    lastZoom = s.options.currProperty.initMapZoom
+
     bg = new PIXI.Sprite(new PIXI.Texture.fromImage(e.target.src));
     var self = this;
     
-    if(!isIE()){
-      bg.width = this.width;
-      bg.height = this.height;
+    if(!isIE()){      
+      bg.width = w > this.width ? w : this.width;
+      bg.height = h > this.height ? h : this.height;
     } else{
       bg.width = w;
       bg.height = h;
@@ -366,6 +368,11 @@ app
   s.openDetail = function(section){
     var op = s.options;
     $state.go('location', { 
+      // locationName: op.selLocObj.url + "#" +section,
+      // section: section,
+      // s: section 
+
+      // For opening from the property page
       all: op.locations,
       t: op.titleArr,
       p: op.currProperty,
@@ -374,85 +381,91 @@ app
       propertyName: op.selLocObj.parent,
       locationName: op.selLocObj.url,
       '#': section,
-      // locationName: op.selLocObj.url + "#" +section,
-      // section: section,
-      // s: section 
     });
   }
 
-  // l($stateParams)
-  var pName = $stateParams.propertyName;
-  if(pName === ""){
-    $state.go('property', { propertyName: "the-banks" });
-  }else{
-    $http.get('data/data.json').then(function (res) {
-      // l(res.data)
-      var data = res.data;
-      s.options.showLoaderMain = false;
-      s.options.titleArr = data.titleArr;
-      s.options.properties = data.properties;
+  l($stateParams)
 
-      // s.options.currProperty = s.options.properties[0];
-      s.options.currProperty = $filter('filter')(s.options.properties, { url: pName })[0];
-      s.options.locations = s.options.currProperty.locations;
-      // s.options.locations = [s.options.currProperty.locations[0]];
-      img.src = s.options.currProperty.map;
-      
-      s.options.locations.forEach(function(loc){
-        var tmp = []
-        , carousel = loc.imgs.carousel
-        ;
-  
-        carousel.forEach(function(img, idx){
-          var path = loc.baseFolder + img.val;
-          if(idx === 0) {
-            tmp.push({
-              img: path,
-              loaded: true
-            })
-          } else if(idx === 1 || idx === carousel.length - 1){
-            var i = new Image();
-            i.src = path;
-  
-            tmp.push({
-              img: path,
-              loaded: true
-            })
-          } else {
-            tmp.push({
-              img: loc.baseFolder + img.val,
-              loaded: false
-            })
-          }
-        })
-  
-        preloadArr.push({
-          id: loc.id,
-          images: tmp
-        })
-      })
-      // l(preloadArr)
-      // img.src = "img/home/loc-map-1.jpg";
-  
-      setTimeout(function () {
-        if(!isTablet() && !isMobile()){          
-          $(".nano").nanoScroller()
-        }
-  
-        $('#car-full').on('slid.bs.carousel', function (e) {
-          s.options.selLocObj.slIdx = e.to;
-          s.$apply();
-        })
-  
-        $('.carousel-sm').on('slid.bs.carousel', function (e) {
-          // l(e)
-          preload(s.options.selLocObj.id, e.to, e.direction);
-          s.options.selLocObj.slIdx = e.to;
-          s.$apply();
-        })
-      }, 0)
-    })
+  var pName = $stateParams.propertyName;
+  // if(pName === ""){
+  //   $state.go('property', { propertyName: "the-banks" });
+  // }else{
+  //   
+  // }
+  if(!pName || pName === ""){ 
+    pName = 'the-banks' 
+    $state.go('property', { propertyName: "the-banks" });
+    return;
   }
+  
+  var jsonFile = 'data/' + pName + '.json?t=' + Date.now() 
+  $http.get(jsonFile)
+  .then(function (res) {
+    // l(res.data)
+    var data = res.data;
+    s.options.showLoaderMain = false;
+    s.options.currProperty = data;
+    s.options.locations = data.locations;
+    s.options.titleArr = data.titleArr;
+    img.src = data.map;
+
+    s.options.locations.forEach(function(loc){
+      var tmp = []
+      , carousel = loc.imgs.carousel
+      ;
+  
+      carousel.forEach(function(img, idx){
+        var path = loc.baseFolder + img.val;
+        if(idx === 0) {
+          tmp.push({
+            img: path,
+            loaded: true
+          })
+        } else if(idx === 1 || idx === carousel.length - 1){
+          var i = new Image();
+          i.src = path;
+  
+          tmp.push({
+            img: path,
+            loaded: true
+          })
+        } else {
+          tmp.push({
+            img: loc.baseFolder + img.val,
+            loaded: false
+          })
+        }
+      })
+  
+      preloadArr.push({
+        id: loc.id,
+        images: tmp
+      })
+    })
+    // l(preloadArr)
+  
+    setTimeout(function () {
+      if(!isTablet() && !isMobile()){          
+        $(".nano").nanoScroller()
+      }
+  
+      $('#car-full').on('slid.bs.carousel', function (e) {
+        s.options.selLocObj.slIdx = e.to;
+        s.$apply();
+      })
+  
+      $('.carousel-sm').on('slid.bs.carousel', function (e) {
+        // l(e)
+        preload(s.options.selLocObj.id, e.to, e.direction);
+        s.options.selLocObj.slIdx = e.to;
+        s.$apply();
+      })
+    }, 0)
+  })
+  .catch(function(err){
+    l(err)
+    $state.go('property', { propertyName: "the-banks" });
+  })
 })
 .controller('fpCtrl', function ($scope, $filter, $timeout, $state, $stateParams, $http, $rootScope, $location){
    
@@ -484,7 +497,7 @@ app
     // Keyboard button handling
     $(document).keydown(onKeyDown);
 
-    if(!isMobile() && !isTablet()){      
+    if(!isMobile() && !isTablet()){
       // Info section mousewheel handling
       $("#section0").mousewheel(function (event, delta) {
         event.preventDefault();
@@ -641,7 +654,18 @@ app
       s.options.showLoaderSection = false;
       s.options.currFullSlider = "";
       s.options.showFullSlider = false;
-      s.currMpUrl = s.loc.mpUrl;
+      s.currMpUrl = "";
+      // if(!isMobile()){
+      //   s.currMpUrl = s.loc.mpUrl;
+      // }
+
+      $(document).on("scroll", function(e){
+        var top = $("#section2")[0].getBoundingClientRect().top
+        if(top <= window.innerHeight/2 && s.currMpUrl === ""){
+          s.currMpUrl = s.loc.mpUrl;
+          s.$apply();
+        }
+      })
 
       $(".section").removeClass("beforeinit");
       $(".carousel-plh").addClass("carousel slide");
@@ -1179,22 +1203,25 @@ app
 
       if(clicked){
         // l($location)
-        $location
-        .path('/property/' + s.loc.parent + '/' + s.loc.url)
-        .replace()
+        // $location
+        // .path('/property/' + s.loc.parent + '/' + s.loc.url)
+        // .replace()
+        s.options.showSelectOpts = false;
+        s.options.showPreview = false;
 
-        // $state.go('location', {
-        //   locationName: s.loc.url
-        // }, {
-        //   // prevent the events onStart and onSuccess from firing
-        //   notify:false,
-        //   // prevent reload of the current state
-        //   reload:false, 
-        //   // replace the last record when changing the params so you don't hit the back button and get old params
-        //   location:'replace', 
-        //   // inherit the current params on the url
-        //   inherit:true
-        // });        
+        $state.go('location', {
+          propertyName: s.loc.parent,
+          locationName: s.loc.url
+        }, {
+          // prevent the events onStart and onSuccess from firing
+          notify:false,
+          // prevent reload of the current state
+          reload:false, 
+          // replace the last record when changing the params so you don't hit the back button and get old params
+          // location: 'replace', 
+          // inherit the current params on the url
+          inherit:false
+        });        
       }
 
       // Init sliders      
@@ -1302,6 +1329,11 @@ app
       s.options.showFilter = false;
       s.options.showFilterFS = false;
     }
+    // var clickedOnDD = $(e.target).hasClass("pull-down-opt-ctn");
+    // if(!clickedOnDD){
+    //   s.options.showSelectOpts = false;
+    //   s.options.showPreview = false;
+    // }
   }
 
   s.showMobileMenu = function() {
@@ -1413,31 +1445,47 @@ app
   $location.hash('').replace()
 
   if (sp.l === null) { // Load from url directly
-    $http.get('data/data.json').then(function (res) {
-      var data = res.data, op = s.options;
+    var jsonFile = 'data/' + sp.propertyName + '.json?t=' + Date.now() 
+    $http.get(jsonFile)
+    // $http.get('data/data.json')
+    .then(function (res) {
+
+      var data = res.data, op = s.options;      
+      op.currProperty = data;
       op.titleArr = data.titleArr;
-
-      var cp = $filter('filter')(data.properties, { 
-        url: sp.propertyName
+      op.locations = data.locations;
+      
+      var cl = $filter('filter')(op.locations, { 
+        url: sp.locationName
+      });
+      
+      if(cl.length) s.selectLocation(cl[0]);
+      else $state.go('location', { 
+        propertyName: op.currProperty.url,
+        locationName: op.currProperty.locations[0].url,
       });
 
-      if(cp.length){
-        op.currProperty = cp[0];
-        op.locations = op.currProperty.locations;
-        var cl = $filter('filter')(op.locations, { 
-          url: sp.locationName
-        });
-        
-        if(cl.length) s.selectLocation(cl[0]);
-        else $state.go('location', { 
-          propertyName: cp[0].url,
-          locationName: cp[0].locations[0].url,
-        });
+      // var cp = $filter('filter')(data.properties, { 
+      //   url: sp.propertyName
+      // });
 
-      } else $state.go('location', { 
-        propertyName: data.properties[0].url,
-        locationName: data.properties[0].locations[0].url, 
-      });
+      // if(cp.length){
+        // op.currProperty = cp[0];
+        // op.locations = op.currProperty.locations;
+        // var cl = $filter('filter')(op.locations, { 
+          // url: sp.locationName
+        // });
+        // 
+        // if(cl.length) s.selectLocation(cl[0]);
+        // else $state.go('location', { 
+          // propertyName: cp[0].url,
+          // locationName: cp[0].locations[0].url,
+        // });
+      // 
+      // } else $state.go('location', { 
+        // propertyName: data.properties[0].url,
+        // locationName: data.properties[0].locations[0].url, 
+      // });
       
       
       // op.currProperty = data.properties[0];
@@ -1446,8 +1494,8 @@ app
       // s.selectLocation(op.locations[0]);
     })
   } else { // Coming from property page
-    op.titleArr = sp.t;
     op.currProperty = sp.p;
+    op.titleArr = sp.t;
     op.locations = sp.all;
     s.selectLocation(sp.l);
   }

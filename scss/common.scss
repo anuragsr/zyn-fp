@@ -60,9 +60,11 @@ body{
     z-index: 1;
     span{
       display: inline-block;
+      white-space: nowrap;
     }
     .nav-link{
       color: $b;
+      white-space: nowrap;      
       &:hover{
         color: $link;
       }

@@ -1,4 +1,3 @@
-ws.code-workspace
 ws.sublime-workspace
 specs
 /versions
@@ -6,5 +5,4 @@ specs
 /resources
 specs
 dir.bat
-scss.bat
 serve.bat

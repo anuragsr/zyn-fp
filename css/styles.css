@@ -96,9 +96,11 @@ body {
 }
 .menu .loc-ctn span {
   display: inline-block;
+  white-space: nowrap;
 }
 .menu .loc-ctn .nav-link {
   color: #000;
+  white-space: nowrap;
 }
 .menu .loc-ctn .nav-link:hover {
   color: #007bff;
@@ -793,6 +795,7 @@ body {
 @media (max-width: 500px) {
   .location .pull-down-ctn {
     padding-top: 5px;
+    margin-bottom: 15px;
   }
 }
 .location .pull-down-ctn i {

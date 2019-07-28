@@ -1,0 +1,516 @@
+{
+  "titleArr": [
+    "Zynderia",
+    "Locations",
+    "Los Angeles",
+    "Creative Compound"
+  ],
+  "id": 2,
+  "url": "sola-multi-stage",
+  "name": "Sola Multi-Stage Complex",
+  "map": "img/sola-multi-stage/loc-map.png",
+  "initMapZoom": -0.35,
+  "locations": [
+    {
+      "id": "01", 
+      "text": {
+        "v": "North Stage",
+        "x": 234,
+        "y": 185
+      },
+      "value": "North Stage",
+      "url": "north",
+      "parent": "sola-multi-stage",
+      "slIdx": 0,
+      "fill": "0xff0000",
+      "coords": [
+
+        [202,156],[541,156],[539,388],[277,391],[282,456],[110,453],[113,310],[199,305]
+
+      ],
+      "infoHtml": "templates/sola-multi-stage/north.html",
+      "baseFolder": "img/sola-multi-stage/",
+      "imgs": {
+        "main": "north/Opt/zynderia-multi-stage-north-01.jpg",
+        "all": [
+          { "val": "north/Opt/zynderia-multi-stage-north-01.jpg", "type": "window,stair,kitchen" },
+          { "val": "north/Opt/zynderia-multi-stage-north-02.jpg", "type": "window" },
+          { "val": "north/Opt/zynderia-multi-stage-north-03.jpg", "type": "window" },
+          { "val": "north/Opt/zynderia-multi-stage-north-04.jpg", "type": "window" },
+          { "val": "north/Opt/zynderia-multi-stage-north-05.jpg", "type": "window" },
+          { "val": "north/Opt/zynderia-multi-stage-north-06.jpg", "type": "window,kitchen" },
+          { "val": "north/Opt/zynderia-multi-stage-north-07.jpg", "type": "kitchen" },
+          { "val": "north/Opt/zynderia-multi-stage-north-08.jpg", "type": "window" },
+          { "val": "north/Opt/zynderia-multi-stage-north-10.jpg", "type": "window, kitchen" },
+          { "val": "north/Opt/zynderia-multi-stage-north-11.jpg", "type": "kitchen" },
+          { "val": "north/Opt/zynderia-multi-stage-north-12.jpg", "type": "window" },
+          { "val": "north/Opt/zynderia-multi-stage-north-13.jpg", "type": "" },
+          { "val": "north/Opt/zynderia-multi-stage-north-14.jpg", "type": "bathroom" },
+          { "val": "north/Opt/zynderia-multi-stage-north-16.jpg", "type": "window,hair" },
+          { "val": "north/Opt/zynderia-multi-stage-north-17.jpg", "type": "hair" },
+          { "val": "north/Opt/zynderia-multi-stage-north-18.jpg", "type": "hair" },
+          { "val": "north/Opt/zynderia-multi-stage-north-19.jpg", "type": "hair" }
+        ],
+        "fpImg": [
+          { "val": "north/fp/zynderia-stage-g-floorplan-01.jpg" },
+          { "val": "north/fp/zynderia-stage-g-02.jpg" },
+          { "val": "north/fp/zynderia-stage-g-03.jpg" },
+          { "val": "north/fp/zynderia-stage-g-04.jpg" },
+          { "val": "north/fp/zynderia-stage-g-05.jpg" },
+          { "val": "north/fp/zynderia-stage-g-06.jpg" },
+          { "val": "north/fp/zynderia-stage-g-07.jpg" },
+          { "val": "north/fp/zynderia-stage-g-08.jpg" },
+          { "val": "north/fp/zynderia-stage-g-09.jpg" },
+          { "val": "north/fp/zynderia-stage-g-10.jpg" },
+          { "val": "north/fp/zynderia-stage-g-11.jpg" },
+          { "val": "north/fp/zynderia-stage-g-12.jpg" }
+        ],
+        "mapImg": [
+          { "val": "north/map/map-01.jpg" },
+          { "val": "north/map/map-02.jpg" },
+          { "val": "north/map/zynderia-stage-g-03.jpg" },
+          { "val": "north/map/zynderia-stage-g-04.jpg" },
+          { "val": "north/map/zynderia-stage-g-05.jpg" },
+          { "val": "north/map/zynderia-stage-g-06.jpg" },
+          { "val": "north/map/zynderia-stage-g-07.jpg" },
+          { "val": "north/map/zynderia-stage-g-08.jpg" },
+          { "val": "north/map/zynderia-stage-g-09.jpg" },
+          { "val": "north/map/zynderia-stage-g-10.jpg" },
+          { "val": "north/map/zynderia-stage-g-11.jpg" },
+          { "val": "north/map/zynderia-stage-g-12.jpg" }
+        ],            
+        "carousel": [
+          { "val": "north/Opt/zynderia-multi-stage-north-01.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-02.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-03.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-04.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-05.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-06.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-07.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-08.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-10.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-11.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-12.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-13.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-14.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-16.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-17.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-18.jpg" },
+          { "val": "north/Opt/zynderia-multi-stage-north-19.jpg" }
+        ]
+      },
+      "mpUrl": "https://my.matterport.com/show/?m=FVaTx6cLg7N&play=1&brand=0&title=0&help=1"
+    },{
+      "id": "C",
+      "text": {
+        "v": "Black Cyc",
+        "x": 640,
+        "y": 185
+      },
+      "value": "Black Cyc Stage",
+      "url": "black-cyc",
+      "parent": "sola-multi-stage",
+      "slIdx": 0,
+      "fill": "0xff4412",
+      "coords": [
+
+        [544,154],[541,388],[887,388],[887,429],[927,426],[924,388],[946,386],[946,162]
+
+      ],
+      "infoHtml": "templates/sola-multi-stage/black-cyc.html",
+      "baseFolder": "img/sola-multi-stage/",
+      "imgs": {
+        "main": "black-cyc/multi-warehouse-stage-black-cyc-01.jpg",
+        "all": [
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-01.jpg", "type": "window,stair,kitchen" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-02.jpg", "type": "window" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-03.jpg", "type": "window" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-04.jpg", "type": "window" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-05.jpg", "type": "window" }
+        ],
+        "fpImg": [
+          { "val": "black-cyc/fp/zynderia-stage-g-floorplan-01.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-02.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-03.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-04.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-05.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-06.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-07.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-08.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-09.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-10.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-11.jpg" },
+          { "val": "black-cyc/fp/zynderia-stage-g-12.jpg" }
+        ],
+        "mapImg": [
+          { "val": "black-cyc/map/map-01.jpg" },
+          { "val": "black-cyc/map/map-02.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-03.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-04.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-05.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-06.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-07.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-08.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-09.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-10.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-11.jpg" },
+          { "val": "black-cyc/map/zynderia-stage-g-12.jpg" }
+        ],            
+        "carousel": [
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-01.jpg" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-02.jpg" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-03.jpg" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-04.jpg" },
+          { "val": "black-cyc/multi-warehouse-stage-black-cyc-05.jpg" }
+        ]
+      },
+      "mpUrl": "https://my.matterport.com/show/?m=bR81TardyMn&play=1&brand=0&title=0&help=1"
+    },{
+      "id": "F",
+      "text": {
+        "v": "Texture Stage",
+        "x": 1050,
+        "y": 185
+      },
+      "value": "Texture Stage",
+      "url": "texture-stage",
+      "parent": "sola-multi-stage",
+      "slIdx": 0,
+      "fill": "0x10efd3",
+      "coords": [
+
+        [957,162],[1485,159],[1488,388],[954,388]
+
+      ],
+      "infoHtml": "templates/sola-multi-stage/texture.html",
+      "baseFolder": "img/sola-multi-stage/",
+      "imgs": {
+        "main": "texture/multi-stage-warehouse-texture-01.jpg",
+        "all": [
+          { "val": "texture/multi-stage-warehouse-texture-01.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-02.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-03.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-04.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-05.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-06.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-07.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-08.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-09.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-10.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-11.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-12.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-13.jpg", "type": "" },
+          { "val": "texture/multi-stage-warehouse-texture-14.jpg", "type": "" }
+        ],
+        "fpImg": [
+          { "val": "texture/fp/zynderia-stage-g-floorplan-01.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-02.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-03.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-04.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-05.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-06.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-07.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-08.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-09.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-10.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-11.jpg" },
+          { "val": "texture/fp/zynderia-stage-g-12.jpg" }
+        ],
+        "mapImg": [
+          { "val": "texture/map/map-01.jpg" },
+          { "val": "texture/map/map-02.jpg" },
+          { "val": "texture/map/zynderia-stage-g-03.jpg" },
+          { "val": "texture/map/zynderia-stage-g-04.jpg" },
+          { "val": "texture/map/zynderia-stage-g-05.jpg" },
+          { "val": "texture/map/zynderia-stage-g-06.jpg" },
+          { "val": "texture/map/zynderia-stage-g-07.jpg" },
+          { "val": "texture/map/zynderia-stage-g-08.jpg" },
+          { "val": "texture/map/zynderia-stage-g-09.jpg" },
+          { "val": "texture/map/zynderia-stage-g-10.jpg" },
+          { "val": "texture/map/zynderia-stage-g-11.jpg" },
+          { "val": "texture/map/zynderia-stage-g-12.jpg" }
+        ],            
+        "carousel": [
+          { "val": "texture/multi-stage-warehouse-texture-01.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-02.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-03.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-04.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-05.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-06.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-07.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-08.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-09.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-10.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-11.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-12.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-13.jpg" },
+          { "val": "texture/multi-stage-warehouse-texture-14.jpg" }
+        ]
+      },
+      "mpUrl": "https://my.matterport.com/show/?m=nwqQ5gRfKec&play=1&brand=0&title=0&help=1"
+    },{
+      "id": "G",
+      "text": {
+        "v": "Grand One Stage",
+        "x": 700,
+        "y": 500
+      },
+      "value": "Grand One Stage",
+      "url": "grand-one",
+      "parent": "sola-multi-stage",
+      "slIdx": 0,
+      "fill": "0x777eee",
+      "coords": [
+        
+        [1485,394],[932,394],[932,437],[884,434],[884,394],[285,394],[285,669],[773,669],[776,625],[1488,623]
+
+      ],
+      "infoHtml": "templates/sola-multi-stage/grand-one.html",
+      "baseFolder": "img/sola-multi-stage/",
+      "imgs": {
+        "main": "grand/multi-stage-warehouse-one-01.jpg",
+        "all": [
+          { "val": "grand/multi-stage-warehouse-one-01.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-02.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-03.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-04.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-05.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-06.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-07.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-08.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-09.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-10.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-11.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-12.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-13.jpg", "type": "" },
+          { "val": "grand/multi-stage-warehouse-one-14.jpg", "type": "" }
+        ],
+        "fpImg": [
+          { "val": "grand/fp/zynderia-stage-g-floorplan-01.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-02.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-03.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-04.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-05.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-06.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-07.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-08.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-09.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-10.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-11.jpg" },
+          { "val": "grand/fp/zynderia-stage-g-12.jpg" }
+        ],
+        "mapImg": [
+          { "val": "grand/map/map-01.jpg" },
+          { "val": "grand/map/map-02.jpg" },
+          { "val": "grand/map/zynderia-stage-g-03.jpg" },
+          { "val": "grand/map/zynderia-stage-g-04.jpg" },
+          { "val": "grand/map/zynderia-stage-g-05.jpg" },
+          { "val": "grand/map/zynderia-stage-g-06.jpg" },
+          { "val": "grand/map/zynderia-stage-g-07.jpg" },
+          { "val": "grand/map/zynderia-stage-g-08.jpg" },
+          { "val": "grand/map/zynderia-stage-g-09.jpg" },
+          { "val": "grand/map/zynderia-stage-g-10.jpg" },
+          { "val": "grand/map/zynderia-stage-g-11.jpg" },
+          { "val": "grand/map/zynderia-stage-g-12.jpg" }
+        ],            
+        "carousel": [
+          { "val": "grand/multi-stage-warehouse-one-01.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-02.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-03.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-04.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-05.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-06.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-07.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-08.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-09.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-10.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-11.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-12.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-13.jpg" },
+          { "val": "grand/multi-stage-warehouse-one-14.jpg" }
+        ]
+      },
+      "mpUrl": "https://my.matterport.com/show/?m=FyCDM9wJ8Bn&play=1&brand=0&title=0&help=1"
+    },{
+      "id": "D",
+      "text": {
+        "v": "Grand Two Stage",
+        "x": 1000,
+        "y": 720
+      },
+      "value": "Grand Two Stage",
+      "url": "grand-two",
+      "parent": "sola-multi-stage",
+      "slIdx": 0,
+      "fill": "0x00ff00",
+      "coords": [
+        
+        [781,631],[1485,631],[1485,857],[781,860]
+        
+      ],
+      "infoHtml": "templates/sola-multi-stage/grand-two.html",
+      "baseFolder": "img/sola-multi-stage/",
+      "imgs": {
+        "main": "grand2/multi-stage-warehouse-two-01.jpg",
+        "all": [
+          { "val": "grand2/multi-stage-warehouse-two-01.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-02.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-03.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-04.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-05.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-06.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-07.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-08.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-09.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-10.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-11.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-12.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-13.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-14.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-15.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-16.jpg", "type": "stair" },
+          { "val": "grand2/multi-stage-warehouse-two-17.jpg", "type": "stair" },
+          { "val": "grand2/multi-stage-warehouse-two-18.jpg", "type": "" },
+          { "val": "grand2/multi-stage-warehouse-two-19.jpg", "type": "" }
+        ],
+        "fpImg": [
+          { "val": "grand2/fp/zynderia-stage-g-floorplan-01.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-02.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-03.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-04.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-05.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-06.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-07.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-08.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-09.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-10.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-11.jpg" },
+          { "val": "grand2/fp/zynderia-stage-g-12.jpg" }
+        ],
+        "mapImg": [
+          { "val": "grand2/map/map-01.jpg" },
+          { "val": "grand2/map/map-02.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-03.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-04.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-05.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-06.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-07.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-08.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-09.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-10.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-11.jpg" },
+          { "val": "grand2/map/zynderia-stage-g-12.jpg" }
+        ],
+        "carousel": [
+          { "val": "grand2/multi-stage-warehouse-two-01.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-02.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-03.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-04.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-05.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-06.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-07.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-08.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-09.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-10.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-11.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-12.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-13.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-14.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-15.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-16.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-17.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-18.jpg" },
+          { "val": "grand2/multi-stage-warehouse-two-19.jpg" }
+        ]
+      },
+      "mpUrl": "https://my.matterport.com/show/?m=8qmQUhpjqqA&play=1&brand=0&title=0&help=1"
+    },{
+      "id": "E",
+      "text": {
+        "v": "H20 Stage",
+        "x": 1000,
+        "y": 950
+      },
+      "value": "H20 Stage",
+      "url": "h20",
+      "parent": "sola-multi-stage",
+      "slIdx": 0,
+      "fill": "0x0000ff",
+      "coords": [
+        
+        [778,867],[775,1093],[1486,1091],[1483,867]
+
+      ],
+      "infoHtml": "templates/sola-multi-stage/windows.html",
+      "baseFolder": "img/sola-multi-stage/",
+      "imgs": {
+        "main": "h20/multi-stage-warehouse-windows-01.jpg",
+        "all": [
+          { "val": "h20/multi-stage-warehouse-windows-01.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-02.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-03.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-04.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-05.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-06.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-07.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-08.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-09.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-10.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-11.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-12.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-13.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-14.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-15.jpg", "type": "" },
+          { "val": "h20/multi-stage-warehouse-windows-16.jpg", "type": "stair" }
+        ],
+        "fpImg": [
+          { "val": "h20/fp/zynderia-stage-g-floorplan-01.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-02.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-03.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-04.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-05.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-06.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-07.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-08.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-09.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-10.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-11.jpg" },
+          { "val": "h20/fp/zynderia-stage-g-12.jpg" }
+        ],
+        "mapImg": [
+          { "val": "h20/map/map-01.jpg" },
+          { "val": "h20/map/map-02.jpg" },
+          { "val": "h20/map/zynderia-stage-g-03.jpg" },
+          { "val": "h20/map/zynderia-stage-g-04.jpg" },
+          { "val": "h20/map/zynderia-stage-g-05.jpg" },
+          { "val": "h20/map/zynderia-stage-g-06.jpg" },
+          { "val": "h20/map/zynderia-stage-g-07.jpg" },
+          { "val": "h20/map/zynderia-stage-g-08.jpg" },
+          { "val": "h20/map/zynderia-stage-g-09.jpg" },
+          { "val": "h20/map/zynderia-stage-g-10.jpg" },
+          { "val": "h20/map/zynderia-stage-g-11.jpg" },
+          { "val": "h20/map/zynderia-stage-g-12.jpg" }
+        ],            
+        "carousel": [
+          { "val": "h20/multi-stage-warehouse-windows-01.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-02.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-03.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-04.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-05.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-06.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-07.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-08.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-09.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-10.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-11.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-12.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-13.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-14.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-15.jpg" },
+          { "val": "h20/multi-stage-warehouse-windows-16.jpg" }
+        ]
+      },
+      "mpUrl": "https://my.matterport.com/show/?m=VAhrJHxQsA3&play=1&brand=0&title=0&help=1"
+    }
+  ]
+}
