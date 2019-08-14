@@ -19,6 +19,9 @@
         Locations at 
         <a href class="p-0 d-inline-block nav-link position-relative" style="top:0.5px;">{{options.currProperty.name}}</a>
       </div>
+      <!-- <pre>
+        {{ testArr | json }}
+      </pre> -->
     </div>
   </div>
   
@@ -135,17 +138,17 @@
             style="left:0; top:0; 
               background-repeat: no-repeat;
               background-position: center; 
-              background-size: cover;">
+              background-size: contain;">
           </div>
         </div>
       </div>
   
       <!-- Slider controls -->
-      <a class="carousel-control-prev" href="#car-full" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href data-target="#car-full" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#car-full" role="button" data-slide="next">
+      <a class="carousel-control-next" href data-target="#car-full" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>

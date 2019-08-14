@@ -25,6 +25,7 @@ app
   , s = $scope
   , preloadArr = []
   , lastZoom
+  // , testArr = []
   // , firstClick = true
   // , areaSelected = false
   ;
@@ -38,7 +39,7 @@ app
   }
 
   $(function () {
-    initCanvas() 
+    if(!isIE()) initCanvas();
   })
 
   window.onresize = function(e){
@@ -46,13 +47,14 @@ app
     h = canEl.height();
     // l(w, h, bg.width, bg.height)
 
-    pixiApp.renderer.resize(w, h);
+    // viewport.fit(false, w, h);
     // lastCenter = {
     //   x: viewport.left + viewport.width / 2,
     //   y: viewport.top + viewport.height / 2,
     // }
-    // viewport.destroy();
-    // createViewPort();
+    pixiApp.renderer.resize(w, h);
+    viewport.destroy();
+    createViewPort();
 
     // viewport.zoom(100, true);
     // viewport.zoom(-100, true);
@@ -61,6 +63,7 @@ app
   function initCanvas(){
     w = canEl.width();
     h = canEl.height();
+    // l(w, h)
     // c = { x: w / 2, y: h / 2 };
 
     pixiApp = new PIXI.Application(w, h, {
@@ -88,7 +91,9 @@ app
   }
 
   function drawCanvas(e){
-    // l("Loaded image")
+    if(isIE()) initCanvas();
+
+    // l("Loaded image", this.width, this.height)
     lastZoom = s.options.currProperty.initMapZoom
 
     bg = new PIXI.Sprite(new PIXI.Texture.fromImage(e.target.src));
@@ -148,12 +153,17 @@ app
 
       if(!isIE()) text.position.set(obj.text.x, obj.text.y);
       else text.position.set(obj.text.x*w/self.width, obj.text.y*h/self.height);
+
+      // l(obj.text.x, obj.text.y, w, h, self.width, self.height)
+      // testArr.push(text.position)      
+
       ctn.addChild(text);
     })
+    // s.testArr = testArr
 
     if(!isIE()) createViewPort();
     else if(isEdge()){
-      setTimout(createViewPort, 500);
+      setTimeout(createViewPort, 500);
     }
   }
 
@@ -185,23 +195,24 @@ app
       maxWidth: bg.width,
       maxHeight: bg.height
     })
-
+    .fitWorld(true)
+    
     viewport.addChild(ctn);
 
-    viewport.on('wheel', function(e){
-      if (e.wheel.dy > 0) lastZoom -= .1
-      else lastZoom += .1
-      // l(lastZoom)
-    })
+    // viewport.on('wheel', function(e){
+    //   if (e.wheel.dy > 0) lastZoom -= .1
+    //   else lastZoom += .1
+    //   // l(lastZoom)
+    // })
 
     // viewport.on('pinch-start', e => {
     //   alert("pinch")
     // })
 
-    if (lastCenter) {
-      viewport.left = lastCenter.x - viewport.width / 2;
-      viewport.top = lastCenter.y - viewport.height / 2;
-    }
+    // if (lastCenter) {
+    //   viewport.left = lastCenter.x - viewport.width / 2;
+    //   viewport.top = lastCenter.y - viewport.height / 2;
+    // }
   }
 
   function selectLoc(gr, toApply, fromGraphic){
