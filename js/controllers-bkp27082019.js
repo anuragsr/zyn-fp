@@ -410,8 +410,7 @@ app
   }
   
   var jsonFile = 'data/' + pName + '.json?t=' + Date.now() 
-  $http
-  .get(jsonFile)
+  $http.get(jsonFile)
   .then(function (res) {
     // l(res.data)
     var data = res.data;
@@ -474,7 +473,7 @@ app
       })
     }, 0)
   })
-  .catch(function(err) {
+  .catch(function(err){
     l(err)
     $state.go('property', { propertyName: "the-banks" });
   })

@@ -28,6 +28,7 @@ html, body, div[ui-view] {
 
 body {
   overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
 }
 @media (max-width: 1024px) {
   body {

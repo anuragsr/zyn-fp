@@ -1,0 +1,169 @@
+<div class="property h-100 w-100">
+  <div class="menu pt-2">
+    <div class="container-fluid px-4">
+      <div class="header">
+        <div class="br-item" ng-repeat="o in options.titleArr">
+          <a href class="nav-link p-0 d-inline-block">{{o}}</a>&nbsp;/&nbsp;
+        </div>
+        <a href class="p-0 d-inline-block nav-link position-relative" style="left:-5px;">{{options.currProperty.name}}</a>
+      </div>
+      <div class="pull-right right-icons">
+        <span>            
+          <i class="fa fa-bars"></i>
+        </span>
+        <span class="ml-2">            
+          <i class="fa fa-user"></i>
+        </span>
+      </div>
+      <div class="loc-ctn mt-2">
+        Locations at 
+        <a href class="p-0 d-inline-block nav-link position-relative" style="top:0.5px;">{{options.currProperty.name}}</a>
+      </div>
+      <!-- <pre>
+        {{ testArr | json }}
+      </pre> -->
+    </div>
+  </div>
+
+  <div class="container-fluid h-100 noselect">
+    Hello World!
+  </div>
+
+  <script>
+    // <div class="container-fluid h-100 noselect" id="section0">
+    //   <div class="row p-2 h-100 pb-4">
+    //     <div class="col-lg-12 col-xl-4 p-0 info-ctn nano">
+    //       <div class="info-ctn-inner w-100 nano-content">
+    //         <div class="loc-box mb-4" ng-repeat="l in options.locations track by $index" ng-class="{'hovered': options.currHoverId == l.id, 'clicked': options.currClickId == l.id}" ng-mouseenter="hoverLoc(l, $event)" ng-mouseleave="outLoc(l, $event)" ng-click="selectLoc(l, $event)">
+    
+    //           <!-- Slider Carousel -->
+    //           <div id="car-{{$index}}" class="carousel-sm carousel slide h-100" data-interval="false">
+    
+    //             <!-- Slides -->
+    //             <div class="carousel-inner h-100">
+    //               <div class="carousel-item h-100" 
+    //                 ng-repeat="i in l.imgs.carousel track by $index" 
+    //                 ng-class="{'active': l.slIdx == $index}">
+    //                 <div class="h-100 w-100" 
+    //                   ng-style="{
+    //                     'background-image': 'url('+ l.baseFolder + i.val +')'
+    //                   }">
+    //                 </div>
+    //               </div>
+    //             </div>
+    
+    //             <!-- Slider controls -->
+    //             <a class="carousel-control-prev" href data-target="#car-{{$index}}" role="button" ng-click="movedSlide(l)" data-slide="prev">
+    //               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    //               <span class="sr-only">Previous</span>
+    //             </a>
+    //             <a class="carousel-control-next" href data-target="#car-{{$index}}" role="button" ng-click="movedSlide(l)" data-slide="next">
+    //               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    //               <span class="sr-only">Next</span>
+    //             </a>
+      
+    //             <!-- Full Screen Link -->
+    //             <a href class="btn-exp p-2" ng-click="showFullScreen(l)">
+    //               <i class="fa fa-expand"></i>              
+    //             </a>
+    
+    //             <!-- Bottom Menu -->
+    //             <div class="loc-opts text-center w-100">
+    //               <div class="loc-title mb-2">{{l.value}}</div>
+    //               <div class="loc-btn">
+    //                 <div class="loc-btn-sng" ng-click="openDetail('info')">
+    //                   <i class="fa fa-info"></i><br/>Info
+    //                 </div>
+    //                 <div class="loc-btn-sng" ng-click="openDetail('images')">
+    //                   <i class="fa fa-camera"></i><br/>Images
+    //                 </div>
+    //                 <div class="loc-btn-sng" ng-click="openDetail('3dvr')">
+    //                   <i class="fa fa-building"></i><br/>3DVR
+    //                 </div>
+    //                 <div class="loc-btn-sng" ng-click="openDetail('floorplan')">
+    //                   <i class="fa fa-dot-circle-o"></i><br/>Floorplan
+    //                 </div>
+    //                 <div class="loc-btn-sng" ng-click="openDetail('maps')">
+    //                   <i class="fa fa-map-marker"></i><br/>Maps
+    //                 </div>
+    //                 <div class="loc-btn-sng" ng-click="openDetail('services')">
+    //                   <i class="fa fa-th-list"></i><br/>Services
+    //                 </div>
+    //               </div>
+    //             </div>
+    
+    //           </div>          
+    //         </div>
+    //       </div>
+    //     </div>
+
+    //     <div class="col-xl-8 h-100 pixi-ctn-outer">
+    //       <div class="pixi-ctn h-100">
+    //         <div class="badge-ctn">
+    //           <span class="badge badge-light badge-pill" ng-click="zoom('in')">
+    //             <i class="fa fa-plus"></i>
+    //           </span>
+    //           <span class="badge badge-light badge-pill" ng-click="zoom('out')">
+    //             <i class="fa fa-minus"></i>
+    //           </span>
+    //         </div>
+    //         <div class="loader">Loading...</div>		
+    //         <img class="logo-img" src="img/zyn-logo.png" />
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    
+    // <div class="img-overlay-ctn h-100 w-100" ng-show="options.showFullSlider">
+    //   <div class="loc-info">
+    //     <div class="br-item" ng-repeat="o in options.titleArr track by $index">
+    //       <a class="p-0 d-inline-block">{{o}}</a>&nbsp;/<span ng-if="$index < options.titleArr.length - 1">&nbsp;</span>
+    //     </div>
+    //     <a class="p-0 d-inline-block">{{options.currProperty.name}}</a>
+    //     /&nbsp;{{options.selLocObj.value}}&nbsp;/&nbsp;Images
+    //   </div>
+    
+    //   <div class="badge-ctn">
+    //     <span class="badge badge-light badge-pill" ng-click="hideFullScreen()">
+    //       <i class="fa fa-times"></i><br/>
+    //       <span class="pill-text">ESC</span>
+    //     </span>
+    //   </div>
+    
+    //   <!-- Full Slider Carousel -->
+    //   <div id="car-full" class="carousel slide h-100" data-interval="false">
+    
+    //     <!-- Slides -->
+    //     <div class="carousel-inner h-100">
+    //       <div ng-repeat="i in options.fullSliderImgs track by $index" class="carousel-item h-100" ng-class="{'active': options.fullSliderIdx == $index}">
+    //         <div class="h-100 w-100" 
+    //           ng-style="{
+    //             'background-image': 'url('+ options.selLocObj.baseFolder + i.val +')'
+    //           }"
+    //           style="left:0; top:0; 
+    //             background-repeat: no-repeat;
+    //             background-position: center; 
+    //             background-size: contain;">
+    //         </div>
+    //       </div>
+    //     </div>
+    
+    //     <!-- Slider controls -->
+    //     <a class="carousel-control-prev" href data-target="#car-full" role="button" data-slide="prev">
+    //       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    //       <span class="sr-only">Previous</span>
+    //     </a>
+    //     <a class="carousel-control-next" href data-target="#car-full" role="button" data-slide="next">
+    //       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    //       <span class="sr-only">Next</span>
+    //     </a>
+    //   </div>
+    // </div>
+  </script>
+</div>
+
+<script>
+  // <div ng-show="options.showLoaderMain" class="spinner h-100 w-100 bg-light">
+  //   <img src="img/spin-dark.svg" />
+  // </div>
+</script>
